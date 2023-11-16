@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class RootApp extends StatefulWidget {
-  const RootApp({super.key});
+  final String standard;
+  const RootApp({super.key, required this.standard});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -27,7 +28,7 @@ class _RootAppState extends State<RootApp> {
 
   Widget getBody() {
     List<Widget> pages = [
-      HomePage(),
+      HomePage(standard: widget.standard),
       const MyCoursesPage(),
       const ExplorePage(),
       const AccountPage(),
