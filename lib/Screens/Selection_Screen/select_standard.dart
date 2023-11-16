@@ -1,4 +1,3 @@
-import 'package:educational_app/Screens/Home/HomePage/home_page.dart';
 import 'package:educational_app/root_app.dart';
 import 'package:educational_app/theme/constants.dart';
 import 'package:flutter/material.dart';
