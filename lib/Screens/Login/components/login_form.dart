@@ -1,3 +1,4 @@
+import 'package:educational_app/Screens/Selection_Screen/select_standard.dart';
 import 'package:educational_app/root_app.dart';
 import 'package:flutter/material.dart';
 import '../../../components/already_have_an_account_acheck.dart';
@@ -51,7 +52,7 @@ class LoginForm extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const RootApp();
+                      return SelectStandard();
                     },
                   ),
                 );

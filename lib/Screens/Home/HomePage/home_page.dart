@@ -15,9 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
-    Key? key,
-  }) : super(key: key);
+  final String? standard;
+  const HomePage({Key? key, this.standard}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -27,6 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    print(widget.standard);
     return Scaffold(
       backgroundColor: background,
       extendBodyBehindAppBar: true,
@@ -34,14 +34,15 @@ class _HomePageState extends State<HomePage> {
         preferredSize: const Size.fromHeight(0.0),
         child: AppBar(
           elevation: 0.0,
-          backgroundColor: Colors.transparent, systemOverlayStyle: SystemUiOverlayStyle.light,
+          backgroundColor: Colors.transparent,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
       ),
-      body: getBody(),
+      body: getBody(widget.standard),
     );
   }
 
-  Widget getBody() {
+  Widget getBody(String? standard) {
     var size = MediaQuery.of(context).size;
     var userName = UserProfile['full_name']!.split(' ');
     return SingleChildScrollView(
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         CustomHeading(
                           title: 'Hi, ${userName[0]}!',
-                          subTitle: 'Let\'s start learning.',
+                          subTitle: 'Standard:$standard',
                           color: textWhite,
                         ),
                         SizedBox(
@@ -130,13 +131,11 @@ class _HomePageState extends State<HomePage> {
             child: Wrap(
               children: List.generate(CoursesJson.length, (index) {
                 var data = CoursesJson[index];
-               
+
                 return Padding(
                   padding: const EdgeInsets.only(right: 15.0, bottom: 20.0),
                   child: GestureDetector(
-                    onTap: () {
-                    
-                    },
+                    onTap: () {},
                     child: CustomCourseCardExpand(
                       thumbNail: data['image'],
                       videoAmount: data['video'],
@@ -174,9 +173,7 @@ class _HomePageState extends State<HomePage> {
                     return Padding(
                       padding: const EdgeInsets.only(right: 10.0, bottom: 10.0),
                       child: GestureDetector(
-                        onTap: () {
-                       
-                        },
+                        onTap: () {},
                         child: CustomCategoriesButton(
                             title: CategoryJson[index]['title']),
                       ),
@@ -185,13 +182,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Row(
                   children: List.generate(CategoryJson.length, (index) {
-                 
                     return Padding(
                       padding: const EdgeInsets.only(right: 10.0, bottom: 10.0),
                       child: GestureDetector(
-                        onTap: () {
-                       
-                        },
+                        onTap: () {},
                         child: CustomCategoriesButton(
                             title: CategoryJson2[index]['title']),
                       ),
@@ -218,12 +212,10 @@ class _HomePageState extends State<HomePage> {
             child: Wrap(
               children: List.generate(CoursesJson.length, (index) {
                 var data = CoursesJson[index];
-              
+
                 return Padding(
                   padding: const EdgeInsets.only(right: 15.0, bottom: 20.0),
                   child: GestureDetector(
-                   
-                   
                     child: CustomCourseCardExpand(
                       thumbNail: data['image'],
                       videoAmount: data['video'],

@@ -1,4 +1,4 @@
-
+import 'package:educational_app/Screens/Selection_Screen/select_standard.dart';
 import 'package:educational_app/root_app.dart';
 import 'package:educational_app/theme/constants.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +111,7 @@ class _MyVerifyState extends State<MyVerify> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const RootApp(),
+                          builder: (context) => SelectStandard(),
                         ),
                       );
                     },
