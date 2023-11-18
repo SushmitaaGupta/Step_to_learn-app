@@ -40,13 +40,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
               right: 0,
               child: Container(
                 decoration: BoxDecoration(
-                  color: secondary,
+                  color: background,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(32.0),
                       topRight: Radius.circular(32.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: primary.withOpacity(0.2),
+                        color: secondary.withOpacity(0.2),
                         offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
@@ -64,9 +64,9 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 32.0, left: 18, right: 16),
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(top: 32.0, left: 18, right: 16),
                             child: Text(
                               'Web Design\nCourse',
                               textAlign: TextAlign.left,
@@ -78,15 +78,15 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
+                          const Padding(
+                            padding: EdgeInsets.only(
                                 left: 16, right: 16, bottom: 8, top: 16),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  '\$28.99',
+                                  'Free',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w200,
@@ -95,26 +95,24 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                                     color: textBlack,
                                   ),
                                 ),
-                                Container(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        '4.3',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w200,
-                                          fontSize: 22,
-                                          letterSpacing: 0.27,
-                                          color: textBlack,
-                                        ),
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '4.8',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w200,
+                                        fontSize: 22,
+                                        letterSpacing: 0.27,
+                                        color: textBlack,
                                       ),
-                                      Icon(
-                                        Icons.star,
-                                        color: primary,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: primary,
+                                      size: 24,
+                                    ),
+                                  ],
                                 )
                               ],
                             ),
@@ -125,24 +123,24 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                               children: <Widget>[
                                 getTimeBoxUI('24', 'Classe'),
                                 getTimeBoxUI('2hours', 'Time'),
-                                getTimeBoxUI('24', 'Seat'),
+                                // getTimeBoxUI('24', 'Seat'),
                               ],
                             ),
                           ),
-                          Expanded(
+                          const Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                   left: 16, right: 16, top: 8, bottom: 8),
                               child: Text(
-                                'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
+                                'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industr em ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w200,
+                                  fontWeight: FontWeight.w300,
                                   fontSize: 14,
                                   letterSpacing: 0.27,
                                   color: Colors.grey,
                                 ),
-                                maxLines: 3,
+                                maxLines: 7,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -154,7 +152,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Container(
+                                SizedBox(
                                   width: 48,
                                   height: 48,
                                   child: Container(
@@ -166,9 +164,9 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                                       border: Border.all(
                                           color: secondary.withOpacity(0.2)),
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.add,
-                                      color: primary,
+                                      color: background,
                                       size: 28,
                                     ),
                                   ),
@@ -191,7 +189,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                                             blurRadius: 10.0),
                                       ],
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Text(
                                         'Join Course',
                                         textAlign: TextAlign.left,
@@ -226,13 +224,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50.0)),
                 elevation: 10.0,
-                child: Container(
+                child: const SizedBox(
                   width: 60,
                   height: 60,
                   child: Center(
                     child: Icon(
                       Icons.favorite,
-                      color: primary,
+                      color: background,
                       size: 30,
                     ),
                   ),
@@ -249,7 +247,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
                   child: InkWell(
                     borderRadius:
                         BorderRadius.circular(AppBar().preferredSize.height),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios,
                       color: primary,
                     ),
@@ -270,14 +268,12 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: background,
-          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: primary,
-                offset: const Offset(1.1, 1.1),
-                blurRadius: 8.0),
+                color: secondary, offset: Offset(1.1, 1.1), blurRadius: 8.0),
           ],
         ),
         child: Padding(
@@ -290,7 +286,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
               Text(
                 text1,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                   letterSpacing: 0.27,
@@ -300,8 +296,8 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> {
               Text(
                 txt2,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w200,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w300,
                   fontSize: 14,
                   letterSpacing: 0.27,
                   color: textBlack,
