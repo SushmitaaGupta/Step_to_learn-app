@@ -7,18 +7,14 @@ class CourseInfoScreen extends StatefulWidget {
 }
 
 class _CourseInfoScreenState extends State<CourseInfoScreen> {
-  final double infoHeight = 364.0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  final double infoHeight = 500.0;
 
   @override
   Widget build(BuildContext context) {
-    final double tempHeight = MediaQuery.of(context).size.height -
-        (MediaQuery.of(context).size.width / 1.2) +
-        24.0;
+    // final double tempHeight = MediaQuery.of(context).size.height -
+    //     (MediaQuery.of(context).size.width / 1.2) +
+    //     24.0;
+    final double tempHeight = MediaQuery.of(context).size.height;
     return Container(
       color: kPrimaryLightColor,
       child: Scaffold(
