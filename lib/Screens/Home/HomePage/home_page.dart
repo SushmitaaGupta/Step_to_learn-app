@@ -1,3 +1,4 @@
+import 'package:educational_app/Screens/design_course/course_info_screen.dart';
 import 'package:educational_app/datas/category_json.dart';
 import 'package:educational_app/datas/courses_json.dart';
 import 'package:educational_app/datas/user_profile.dart';
@@ -135,7 +136,16 @@ class _HomePageState extends State<HomePage> {
                 return Padding(
                   padding: const EdgeInsets.only(right: 15.0, bottom: 20.0),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CourseInfoScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: CustomCourseCardExpand(
                       thumbNail: data['image'],
                       videoAmount: data['video'],
@@ -216,6 +226,16 @@ class _HomePageState extends State<HomePage> {
                 return Padding(
                   padding: const EdgeInsets.only(right: 15.0, bottom: 20.0),
                   child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CourseInfoScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: CustomCourseCardExpand(
                       thumbNail: data['image'],
                       videoAmount: data['video'],
